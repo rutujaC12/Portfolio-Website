@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rutuja's Portfolio - Projects</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="project.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="#">Rutuja</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about-me">About</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="https://drive.google.com/file/d/1KIkKlA1_PE_6k8StQpSXnWKPkVxzKJEo/view?usp=sharing">Resume</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <main>
+        <!-- Secondary Navbar -->
+        <div class="secondary-navbar">
+            <ul>
+                <li><a href="#" onclick="filterProjects('all')">All</a></li>
+                <li><a href="#" onclick="filterProjects('web')">Web</a></li>
+                <li><a href="#" onclick="filterProjects('machine-learning')">Machine Learning</a></li>
+                <li><a href="#" onclick="filterProjects('other')">Other</a></li>
+            </ul>
+        </div>
+    
+        <!-- Projects Section -->
+        <section id="projects">
+            <div class="project">
+                <h2>Cancer Prediction</h2>
+                <!-- <p>Cancer Prediction</p> -->
+                <img src="imgProjects/CancerPrediction.jpg" alt="Project 1">
+            </div>
+            <div class="project">
+                <h2>Green Trust Rentals</h2>
+                <!-- <p>Green Trust Rentals</p> -->
+                <img src="imgProjects/miniProject1.jpeg" alt="Project 2">
+            </div>
+            <div class="project">
+                <h2>Movie Recommendation System</h2>
+                <!-- <p>Movie Recommendation System</p> -->
+                <img src="imgProjects/MovieRecommendation.png" alt="Project 3">
+            </div>
+            <div class="project">
+                <h2>Traffic Sign Recognization</h2>
+                <!-- <p>Traffic Sign Recognization</p> -->
+                <img src="imgProjects/Traffic Sign.png" alt="Project 4">
+            </div>
+            <div class="project">
+                <h2>E-Commerce Sales Dashboard</h2>
+                <!-- <p>ANALYZED ECOMMERCE SALES DATA CREATED AN INTRACTIVE DASHBOARD USING POWERBI</p> -->
+                <img src="imgProjects/ecommerceSalesPowerBI.png" alt="Project 5">
+            </div>
+            <div class="project">
+                <h2>Daily Expense Tracker</h2>
+                <!-- <p>Description of Project 6</p> -->
+                <img src="imgProjects/DailyExpenseTracker.jpg" alt="Project 6">
+            </div>
+            <div class="project">
+                <h2>Landing Page</h2>
+                <!-- <p>Landing Page for cake website </p> -->
+                <img src="imgProjects/Landing Page.jpg" alt="Project 7">
+            </div>
+            <div class="project">
+                <h2>Travel Booking Website</h2>
+                <!-- <p>Description</p> -->
+                <img src="imgProjects/TravelBookingWebsite.jpg" alt="Project 8">
+            </div>
+            <!-- Projects will be dynamically added here -->
+        </section>
+    </main>    
+    
+
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    const categoryLinks = document.querySelectorAll('.category-link');
+    const projects = document.querySelectorAll('.project');
+
+    categoryLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const category = this.getAttribute('data-category');
+            filterProjects(category);
+        });
+    });
+
+    function filterProjects(category) {
+        projects.forEach(project => {
+            if (category === 'all' || project.getAttribute('data-category') === category) {
+                project.style.display = 'block';
+            } else {
+                project.style.display = 'none';
+            }
+        });
+    }
+});
+
+</script>
+
+</html>
