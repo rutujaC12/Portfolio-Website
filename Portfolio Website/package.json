@@ -1,0 +1,11 @@
+{
+  "name": "Portfolio Website",
+  "version": "1.0.0",
+  "description": "A showcase of my work and projects, highlighting my skills and expertise in web development, design, and more.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Rutuja Chougule",
+  "license": "MIT"
+}
